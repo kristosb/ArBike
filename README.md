@@ -40,3 +40,6 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 npx create-react-app projectname
 cd projectname
 npm start
+
+### test it here
+[ArBike](https://kristosb.github.io/ArBike/)
