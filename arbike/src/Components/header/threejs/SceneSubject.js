@@ -21,16 +21,16 @@ export default function scene(scene) {
 
     group.add(subjectMesh);
     group.add(subjectWireframe);*/
-    const boxGeometry = new THREE.BoxGeometry(10, 10, 10);
+    const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
     function makeInstance(geometry, color, x) {
         const material = new THREE.MeshPhongMaterial({color});
     
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
     
-        //cube.position.x = x;
-        //cube.position.y = 1.6;
-        //cube.position.z = -2;
+        cube.position.x = x;
+        cube.position.y = 1.6;
+        cube.position.z = -2;
     
         return cube;
       }

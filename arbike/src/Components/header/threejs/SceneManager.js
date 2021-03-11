@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import SceneSubject from './SceneSubject';
 import GeneralLights from './GeneralLights';
-
+import { VRButton } from 'three/examples/jsm/webxr/VRButton';
 export default function canvas(canvas)  {
 
     const clock = new THREE.Clock();
@@ -11,7 +11,7 @@ export default function canvas(canvas)  {
         width: canvas.width,
         height: canvas.height
     }
-
+    //console.log(screenDimensions);
     const mousePosition = {
         x: 0,
         y: 0
@@ -21,6 +21,9 @@ export default function canvas(canvas)  {
     const renderer = buildRender(screenDimensions);
     const camera = buildCamera(screenDimensions);
     const sceneSubjects = createSceneSubjects(scene);
+
+    
+    
 
     function buildScene() {
         const scene = new THREE.Scene();
@@ -32,24 +35,26 @@ export default function canvas(canvas)  {
 
     function buildRender({ width, height }) {
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); 
+        renderer.xr.enabled = true;
         const DPR = window.devicePixelRatio ? window.devicePixelRatio : 1;
         renderer.setPixelRatio(DPR);
         renderer.setSize(width, height);
 
         renderer.gammaInput = true;
         renderer.gammaOutput = true; 
-
+        
         return renderer;
     }
 
     function buildCamera({ width, height }) {
         const aspectRatio = width / height;
-        const fieldOfView = 60;
-        const nearPlane = 4;
-        const farPlane = 100; 
+        const fieldOfView = 75;
+        const nearPlane = 0.1;
+        const farPlane = 50; 
         const camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
 
-        camera.position.z = 40;
+        //camera.position.z = 40;
+        camera.position.set(0, 1.6, 0);
 
         return camera;
     }
@@ -69,16 +74,16 @@ export default function canvas(canvas)  {
         for(let i=0; i<sceneSubjects.length; i++)
             sceneSubjects[i].update(elapsedTime);
 
-        updateCameraPositionRelativeToMouse();
+        //updateCameraPositionRelativeToMouse();
 
         renderer.render(scene, camera);
     }
 
-    function updateCameraPositionRelativeToMouse() {
+    /*function updateCameraPositionRelativeToMouse() {
         camera.position.x += (  (mousePosition.x * 0.01) - camera.position.x ) * 0.01;
         camera.position.y += ( -(mousePosition.y * 0.01) - camera.position.y ) * 0.01;
         camera.lookAt(origin);
-    }
+    }*/
 
     function onWindowResize() {
         const { width, height } = canvas;
@@ -88,18 +93,26 @@ export default function canvas(canvas)  {
 
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        
         renderer.setSize(width, height);
     }
 
-    function onMouseMove(x, y) {
+    /*function onMouseMove(x, y) {
         mousePosition.x = x;
         mousePosition.y = y;
-    }
+    }*/
 
+    function vrButtonGet()
+    {
+        return VRButton.createButton( renderer );
+    }
+    function vrRender(ren){
+        renderer.setAnimationLoop(ren);
+    }
     return {
         update,
         onWindowResize,
-        onMouseMove
+        //onMouseMove,
+        vrButtonGet,
+        vrRender
     }
 }

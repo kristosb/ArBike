@@ -14,7 +14,7 @@ function Main(){
 
   return(
     <section>
-      <Header />
+      
     </section>
   );
 }
@@ -23,9 +23,9 @@ function App() {
   return (
     <div className="App">
       
-      <Header1 name = "some text"/>
-      <Main/>
-      <h2>ok</h2>
+      {/*<Header1 name = "some text"/>*/}
+      <Header />
+      {/*<h2>ok</h2>*/}
     </div>
   );
 }

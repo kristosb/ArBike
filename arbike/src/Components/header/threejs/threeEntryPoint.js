@@ -1,24 +1,28 @@
 import SceneManager from './SceneManager';
 
+
 export default container => {
     const canvas = createCanvas(document, container);
     const sceneManager = new SceneManager(canvas);
 
     let canvasHalfWidth;
     let canvasHalfHeight;
-
+    
+    container.appendChild(sceneManager.vrButtonGet());
     bindEventListeners();
     render();
+    
 
     function createCanvas(document, container) {
         const canvas = document.createElement('canvas');     
         container.appendChild(canvas);
+        
         return canvas;
     }
 
     function bindEventListeners() {
         window.onresize = resizeCanvas;
-        window.onmousemove = mouseMove;
+        //window.onmousemove = mouseMove;
         resizeCanvas();	
     }
 
@@ -35,12 +39,13 @@ export default container => {
         sceneManager.onWindowResize()
     }
 
-    function mouseMove({screenX, screenY}) {
+    /*function mouseMove({screenX, screenY}) {
         sceneManager.onMouseMove(screenX-canvasHalfWidth, screenY-canvasHalfHeight);
-    }
+    }*/
 
     function render(time) {
-        requestAnimationFrame(render);
+        sceneManager.vrRender(render);
+        //requestAnimationFrame(render);
         sceneManager.update();
     }
 }

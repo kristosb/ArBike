@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 
+
 export default function scene(scene) {    
 
     /*const lightIn = new THREE.PointLight("#4CAF50", 30);
@@ -8,11 +9,12 @@ export default function scene(scene) {
     const color = 0xFFFFFF;
     const intensity = 1;
     const light = new THREE.DirectionalLight(color, intensity);
+    //light.position.set(-1, 2, 4);
     light.position.set(-1, 2, 4);
     scene.add(light);
     //scene.add(lightIn);
     //scene.add(lightOut);
-
+    
     const rad = 80;
 
     function update(time) {

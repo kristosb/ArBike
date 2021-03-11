@@ -43,3 +43,7 @@ npm start
 
 ### test it here
 [ArBike](https://kristosb.github.io/ArBike/)
+
+### deplyment
+
+npm run deploy
