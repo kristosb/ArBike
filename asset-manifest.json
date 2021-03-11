@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/ArBike/static/css/main.6c4e0950.chunk.css",
-    "main.js": "/ArBike/static/js/main.6a5ba4d3.chunk.js",
-    "main.js.map": "/ArBike/static/js/main.6a5ba4d3.chunk.js.map",
+    "main.js": "/ArBike/static/js/main.b52e9c63.chunk.js",
+    "main.js.map": "/ArBike/static/js/main.b52e9c63.chunk.js.map",
     "runtime-main.js": "/ArBike/static/js/runtime-main.c180367e.js",
     "runtime-main.js.map": "/ArBike/static/js/runtime-main.c180367e.js.map",
-    "static/js/2.387de744.chunk.js": "/ArBike/static/js/2.387de744.chunk.js",
-    "static/js/2.387de744.chunk.js.map": "/ArBike/static/js/2.387de744.chunk.js.map",
+    "static/js/2.06b99df3.chunk.js": "/ArBike/static/js/2.06b99df3.chunk.js",
+    "static/js/2.06b99df3.chunk.js.map": "/ArBike/static/js/2.06b99df3.chunk.js.map",
     "index.html": "/ArBike/index.html",
     "static/css/main.6c4e0950.chunk.css.map": "/ArBike/static/css/main.6c4e0950.chunk.css.map",
-    "static/js/2.387de744.chunk.js.LICENSE.txt": "/ArBike/static/js/2.387de744.chunk.js.LICENSE.txt"
+    "static/js/2.06b99df3.chunk.js.LICENSE.txt": "/ArBike/static/js/2.06b99df3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c180367e.js",
-    "static/js/2.387de744.chunk.js",
+    "static/js/2.06b99df3.chunk.js",
     "static/css/main.6c4e0950.chunk.css",
-    "static/js/main.6a5ba4d3.chunk.js"
+    "static/js/main.b52e9c63.chunk.js"
   ]
 }
